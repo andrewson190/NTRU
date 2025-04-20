@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import random
 from fastapi.middleware.cors import CORSMiddleware
-
+#alsdkfjlaksdfjasldfkj
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
