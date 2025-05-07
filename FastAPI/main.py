@@ -118,6 +118,9 @@ def random_poly(trits=True, mod=q):
     if trits:
         return [random.choice([-1,0,1]) for _ in range(N)]
     return [random.randrange(mod) for _ in range(N)]
+@app.get("/")
+async def root():
+    return {"status": "ok"}
 
 @app.get("/generate_keys")
 def generate_keys():
