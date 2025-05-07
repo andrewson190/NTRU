@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/NTRU/static/css/main.72b38f2d.css",
-    "main.js": "/NTRU/static/js/main.26220cf5.js",
+    "main.js": "/NTRU/static/js/main.f1aafd93.js",
     "index.html": "/NTRU/index.html",
     "main.72b38f2d.css.map": "/NTRU/static/css/main.72b38f2d.css.map",
-    "main.26220cf5.js.map": "/NTRU/static/js/main.26220cf5.js.map"
+    "main.f1aafd93.js.map": "/NTRU/static/js/main.f1aafd93.js.map"
   },
   "entrypoints": [
     "static/css/main.72b38f2d.css",
-    "static/js/main.26220cf5.js"
+    "static/js/main.f1aafd93.js"
   ]
 }
