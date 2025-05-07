@@ -4,6 +4,7 @@ const N = 11;
 
 // —— Demo Component (your existing encryption UI) ——
 function Demo() {
+  const API = process.env.REACT_APP_API_URL;
   const [h, setH] = useState(null);
   const [f, setF] = useState(null);
   const [plaintext, setPlaintext] = useState('');
@@ -14,7 +15,7 @@ function Demo() {
   // Generate key pair
   const generateKeys = async () => {
     try {
-      const resp = await fetch('http://localhost:8000/generate_keys');
+      const resp = await fetch('${API}/generate_keys');
       const data = await resp.json();
       setH(data.h);
       setF(data.f);
@@ -32,7 +33,7 @@ function Demo() {
     for (let i = 0; i < bytes.length; i += N) {
       const block = bytes.slice(i, i + N);
       while (block.length < N) block.push(0);
-      const resp = await fetch('http://localhost:8000/encrypt', {
+      const resp = await fetch('${API}/encrypt', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ h, m: block }),
@@ -53,7 +54,7 @@ function Demo() {
     const allBytes = [];
     for (let i = 0; i < nums.length; i += N) {
       const chunk = nums.slice(i, i + N);
-      const resp = await fetch('http://localhost:8000/decrypt', {
+      const resp = await fetch('${API}/decrypt', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ f, h, m: chunk }),

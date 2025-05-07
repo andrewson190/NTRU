@@ -6,7 +6,10 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # React dev server
+    allow_origins=[
+    "https://andrewson190.github.io",              # for your custom GH Pages
+    "https://andrewson190.github.io/NTRU",         # if you need the sub-path
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
